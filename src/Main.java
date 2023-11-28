@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 
 public class Main extends JFrame implements ActionListener {
     private Color selectedColor = Color.BLACK;
-    private int selectedThickness = 1;
+    private int selectedThickness = 5;
 
     private JButton colorButton;
     private JButton thicknessButton;
@@ -21,11 +21,11 @@ public class Main extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
 
-        // действия с кнопками
+        // кнопками
         colorButton = new JButton("Цвет");
         thicknessButton = new JButton("Толщина");
 
-        // Add action listeners to the buttons
+        // прослушиватели действий к кнопкам
         colorButton.addActionListener(this);
         thicknessButton.addActionListener(this);
 
@@ -82,8 +82,8 @@ public class Main extends JFrame implements ActionListener {
             try {
                 selectedThickness = Integer.parseInt(input);
             } catch (NumberFormatException ex) {
-                // In case of incorrect input, use default value (1)
-                selectedThickness = 1;
+                // в случае неправильного ввода - значение по умолчанию (5)
+                selectedThickness = 5;
             }
         }
     }
