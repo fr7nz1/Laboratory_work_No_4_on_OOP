@@ -17,13 +17,13 @@ public class Main extends JFrame implements ActionListener {
     private int currX, currY;
 
     public Main() {
-        setTitle("Drawing App");
+        setTitle("Перо");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
 
         // действия с кнопками
-        colorButton = new JButton("Color");
-        thicknessButton = new JButton("Thickness");
+        colorButton = new JButton("Цвет");
+        thicknessButton = new JButton("Толщина");
 
         // Add action listeners to the buttons
         colorButton.addActionListener(this);
@@ -75,10 +75,10 @@ public class Main extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == colorButton) {
             // диалоговое окно выбора цвета
-            selectedColor = JColorChooser.showDialog(this, "Choose Color", selectedColor);
+            selectedColor = JColorChooser.showDialog(this, "Выберите цвет", selectedColor);
         } else if (e.getSource() == thicknessButton) {
             // диалоговое окно выбора толщины
-            String input = JOptionPane.showInputDialog(this, "Enter Thickness");
+            String input = JOptionPane.showInputDialog(this, "Введите толщину");
             try {
                 selectedThickness = Integer.parseInt(input);
             } catch (NumberFormatException ex) {
